@@ -1,0 +1,12 @@
+Hand-written C POSIX implementation of ROSACE Case Study.
+This implementation of ROSACE is autonomous and should
+execute properly on any POSIX compliant system with pthread support.
+
+Description:
+
+The implementation is made of 5 threads running at various frequencies.
+The frequencies are explained in the code itself.
+Synchronisation between threads is done using pthread_barrier primitives.
+
+TBC...
+

@@ -1,0 +1,22 @@
+
+CC=gcc
+CFLAGS=-Wall
+LIBS=-pthread -lm
+ 
+OBJS = assemblage_includes.o io.o threads.o assemblage.o rosace.o
+TARGET=rosace
+
+all: $(TARGET)
+
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIBS)
+	
+
+clean: 
+	rm -f $(OBJS) $(TARGET)
+
+

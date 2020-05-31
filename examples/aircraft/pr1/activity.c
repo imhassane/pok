@@ -1,0 +1,52 @@
+/*
+ *                               POK header
+ * 
+ * The following file is a part of the POK project. Any modification should
+ * made according to the POK licence. You CANNOT use this file or a part of
+ * this file is this part of a file for your own project
+ *
+ * For more information on the POK licence, please see our LICENCE FILE
+ *
+ * Please follow the coding guidelines described in doc/CODING_GUIDELINES
+ *
+ *                                      Copyright (c) 2007-2009 POK team 
+ *
+ * Created by julien on Thu Jan 15 23:34:13 2009 
+ */
+
+
+#include <libc/stdio.h>
+#include <core/thread.h>
+#include <core/semaphore.h>
+#include <types.h>
+//#include "/timed_posix_rosace/assemblage.c"
+
+
+extern uint8_t sid;
+uint8_t val;
+
+void* th_h_filter()
+{
+   pok_ret_t ret;
+   while (1)
+   {
+      printf ("P1T1: I am H_FILTER\n");
+      ret = pok_sem_signal (sid);
+      printf ("P1T1: pok_sem_signal, ret=%d\n", ret);
+      pok_thread_sleep (200000);
+   }
+}
+
+void* th_az_filter()
+{
+   pok_ret_t ret;
+   while (1)
+   {
+      printf ("P1T2: I am AZ_FILTER\n");
+      ret = pok_sem_wait (sid, 0);
+      printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
+      ret = pok_sem_wait (sid, 0);
+      printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
+      pok_thread_sleep (200000);
+   }
+}
