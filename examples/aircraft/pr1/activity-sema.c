@@ -49,7 +49,7 @@ void* th_az_filter()
       printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
       ret = pok_sem_wait (sid, 0);
       printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
-      
+   ret = pok_sem_signal (sid); ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }

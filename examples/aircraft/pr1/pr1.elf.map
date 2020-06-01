@@ -18,13 +18,6 @@ pok_allocator_spaces
                     0x4b0             /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
 sid                 0x2               main.o
 
-Sections d'entrée éliminées
-
- .group         0x0000000000000000        0x8 main.o
- .group         0x0000000000000000        0x8 activity.o
- .text.__x86.get_pc_thunk.bx
-                0x0000000000000000        0x4 activity.o
-
 Configuration mémoire
 
 Nom              Origine            Longueur           Attributs
@@ -35,164 +28,155 @@ Script de l'éditeurs de liens and table de projection mémoire
                 0x0000000000000000                . = 0x0
                 0x0000000000000000                __partition_begin = .
 
-.text           0x0000000000000000     0x14a3
+.text           0x0000000000000000     0x196e
  *(.text)
- .text          0x0000000000000000      0x133 main.o
+ .text          0x0000000000000000      0x246 main.o
                 0x0000000000000000                main
- .text          0x0000000000000133       0xe8 activity.o
-                0x0000000000000133                th_h_filter
-                0x0000000000000197                th_az_filter
- .text          0x000000000000021b       0x14 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
-                0x000000000000021b                pok_arch_idle
-                0x000000000000021e                pok_do_syscall
- .text          0x000000000000022f      0x906 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
-                0x000000000000022f                pok_allocator_print_spaces
-                0x0000000000000296                pok_allocator_allocate
-                0x0000000000000480                pok_allocator_delete_space
-                0x00000000000004dd                pok_allocator_merge_space
-                0x00000000000005b2                pok_allocator_free
-                0x00000000000006b1                pok_time_gettick
-                0x0000000000000703                pok_time_get
-                0x0000000000000722                __pok_partition_start
-                0x0000000000000742                pok_sem_create
-                0x00000000000007c5                pok_sem_signal
-                0x000000000000082e                pok_sem_status
-                0x0000000000000834                pok_sem_wait
-                0x00000000000008ad                pok_thread_create
-                0x00000000000008ff                pok_thread_attr_init
-                0x0000000000000949                pok_thread_period
-                0x000000000000099b                pok_thread_sleep
-                0x00000000000009ed                pok_thread_status
-                0x0000000000000a3f                pok_thread_delayed_start
-                0x0000000000000a91                pok_thread_set_priority
-                0x0000000000000ae3                pok_thread_resume
- .text          0x0000000000000b35      0x96e /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
-                0x0000000000000e61                vprintf
-                0x0000000000000fcd                printf
-                0x0000000000000ff4                itoa
-                0x0000000000001091                atoi
-                0x00000000000010d6                memcpy
-                0x00000000000010fe                memset
-                0x0000000000001120                memcmp
-                0x000000000000116f                strcmp
-                0x00000000000011b1                strncmp
-                0x000000000000120d                strcpy
-                0x000000000000123d                strncpy
-                0x0000000000001277                streq
-                0x000000000000131e                strlen
-                0x000000000000133d                __udivdi3
-                0x00000000000013e5                __umoddi3
-                0x0000000000001410                rand
-                0x0000000000001440                free
-                0x000000000000145f                malloc
-                0x000000000000147e                calloc
+ .text          0x0000000000000246      0x4a0 activity.o
+                0x0000000000000246                th_h_filter
+                0x0000000000000296                th_az_filter
+                0x000000000000032e                th_vz_filter
+                0x00000000000003a5                th_q_filter
+                0x000000000000041c                th_va_filter
+                0x0000000000000493                th_altitude_hold
+                0x000000000000050a                th_va_control
+                0x0000000000000581                th_vz_control
+                0x00000000000005f8                th_elevator
+                0x000000000000066f                th_engine
+ .text          0x00000000000006e6       0x14 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+                0x00000000000006e6                pok_arch_idle
+                0x00000000000006e9                pok_do_syscall
+ .text          0x00000000000006fa      0x906 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+                0x00000000000006fa                pok_allocator_print_spaces
+                0x0000000000000761                pok_allocator_allocate
+                0x000000000000094b                pok_allocator_delete_space
+                0x00000000000009a8                pok_allocator_merge_space
+                0x0000000000000a7d                pok_allocator_free
+                0x0000000000000b7c                pok_time_gettick
+                0x0000000000000bce                pok_time_get
+                0x0000000000000bed                __pok_partition_start
+                0x0000000000000c0d                pok_sem_create
+                0x0000000000000c90                pok_sem_signal
+                0x0000000000000cf9                pok_sem_status
+                0x0000000000000cff                pok_sem_wait
+                0x0000000000000d78                pok_thread_create
+                0x0000000000000dca                pok_thread_attr_init
+                0x0000000000000e14                pok_thread_period
+                0x0000000000000e66                pok_thread_sleep
+                0x0000000000000eb8                pok_thread_status
+                0x0000000000000f0a                pok_thread_delayed_start
+                0x0000000000000f5c                pok_thread_set_priority
+                0x0000000000000fae                pok_thread_resume
+ .text          0x0000000000001000      0x96e /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+                0x000000000000132c                vprintf
+                0x0000000000001498                printf
+                0x00000000000014bf                itoa
+                0x000000000000155c                atoi
+                0x00000000000015a1                memcpy
+                0x00000000000015c9                memset
+                0x00000000000015eb                memcmp
+                0x000000000000163a                strcmp
+                0x000000000000167c                strncmp
+                0x00000000000016d8                strcpy
+                0x0000000000001708                strncpy
+                0x0000000000001742                streq
+                0x00000000000017e9                strlen
+                0x0000000000001808                __udivdi3
+                0x00000000000018b0                __umoddi3
+                0x00000000000018db                rand
+                0x000000000000190b                free
+                0x000000000000192a                malloc
+                0x0000000000001949                calloc
 
-.text.__x86.get_pc_thunk.bx
-                0x00000000000014a3        0x4
- .text.__x86.get_pc_thunk.bx
-                0x00000000000014a3        0x4 main.o
-                0x00000000000014a3                __x86.get_pc_thunk.bx
+.iplt           0x0000000000001970        0x0
+ .iplt          0x0000000000001970        0x0 main.o
 
-.iplt           0x00000000000014b0        0x0
- .iplt          0x00000000000014b0        0x0 main.o
-
-.plt.got        0x00000000000014a8        0x0
- .plt.got       0x00000000000014a8        0x0 main.o
-
-.rodata         0x00000000000014c0       0x7d
+.rodata         0x0000000000001980       0x7d
  *(.rodata)
- .rodata        0x00000000000014c0       0x7d /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+ .rodata        0x0000000000001980       0x7d /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
-.rodata.str1.4  0x0000000000001540      0x2a4
+.rodata.str1.4  0x0000000000001a00      0x3e4
  .rodata.str1.4
-                0x0000000000001540       0x76 main.o
- *fill*         0x00000000000015b6        0x2 
+                0x0000000000001a00      0x1b7 main.o
+ *fill*         0x0000000000001bb7        0x1 
  .rodata.str1.4
-                0x00000000000015b8      0x22c /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+                0x0000000000001bb8      0x22c /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
                                         0x22b (taille avant relaxe)
 
-.eh_frame       0x00000000000017e4      0x8e8
- .eh_frame      0x00000000000017e4       0x70 main.o
- .eh_frame      0x0000000000001854       0xa0 activity.o
-                                         0xcc (taille avant relaxe)
- .eh_frame      0x00000000000018f4       0x30 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+.eh_frame       0x0000000000001de4      0xb2c
+ .eh_frame      0x0000000000001de4       0x54 main.o
+ .eh_frame      0x0000000000001e38      0x300 activity.o
+                                        0x318 (taille avant relaxe)
+ .eh_frame      0x0000000000002138       0x30 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
                                          0x60 (taille avant relaxe)
- .eh_frame      0x0000000000001924      0x350 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .eh_frame      0x0000000000002168      0x350 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
                                         0x4b8 (taille avant relaxe)
- .eh_frame      0x0000000000001c74      0x458 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+ .eh_frame      0x00000000000024b8      0x458 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
                                         0x5d8 (taille avant relaxe)
 
-.rodata.str1.1  0x00000000000020cc       0x65
+.rodata.str1.1  0x0000000000002910      0x1f8
  .rodata.str1.1
-                0x00000000000020cc       0x65 activity.o
+                0x0000000000002910      0x1f8 activity.o
 
-.rel.dyn        0x0000000000002134        0x0
- .rel.iplt      0x0000000000002134        0x0 main.o
- .rel.got       0x0000000000002134        0x0 main.o
- .rel.text      0x0000000000002134        0x0 main.o
+.rel.dyn        0x0000000000002b08        0x0
+ .rel.iplt      0x0000000000002b08        0x0 main.o
+ .rel.text      0x0000000000002b08        0x0 main.o
 
-.data           0x0000000000002140     0x8590
+.data           0x0000000000002b20     0x8590
  *(.data)
- .data          0x0000000000002140        0x0 main.o
- .data          0x0000000000002140        0x0 activity.o
- .data          0x0000000000002140        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
- .data          0x0000000000002140        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .data          0x0000000000002140        0x4 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+ .data          0x0000000000002b20        0x0 main.o
+ .data          0x0000000000002b20        0x0 activity.o
+ .data          0x0000000000002b20        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .data          0x0000000000002b20        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .data          0x0000000000002b20        0x4 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
  *(.bss)
- .bss           0x0000000000002144        0x0 main.o
- .bss           0x0000000000002144        0x0 activity.o
- .bss           0x0000000000002144        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
- .bss           0x0000000000002144        0x8 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
-                0x0000000000002144                pok_allocator_initialized
-                0x0000000000002148                pok_allocator_used_spaces
- *fill*         0x000000000000214c       0x14 
- .bss           0x0000000000002160       0x84 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+ .bss           0x0000000000002b24        0x0 main.o
+ .bss           0x0000000000002b24        0x0 activity.o
+ .bss           0x0000000000002b24        0x0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .bss           0x0000000000002b24        0x8 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+                0x0000000000002b24                pok_allocator_initialized
+                0x0000000000002b28                pok_allocator_used_spaces
+ *fill*         0x0000000000002b2c       0x14 
+ .bss           0x0000000000002b40       0x84 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
  *(COMMON)
- COMMON         0x00000000000021e4        0x2 main.o
-                0x00000000000021e4                sid
- COMMON         0x00000000000021e6        0x2 activity.o
-                0x00000000000021e6                val
- *fill*         0x00000000000021e8       0x18 
- COMMON         0x0000000000002200     0x84d0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
-                0x0000000000002200                pok_allocator_memspace
-                0x000000000000a200                errno
-                0x000000000000a220                pok_allocator_spaces
-                0x000000000000a6d0                __partition_end = .
+ COMMON         0x0000000000002bc4        0x2 main.o
+                0x0000000000002bc4                sid
+ COMMON         0x0000000000002bc6        0x2 activity.o
+                0x0000000000002bc6                val
+ *fill*         0x0000000000002bc8       0x18 
+ COMMON         0x0000000000002be0     0x84d0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+                0x0000000000002be0                pok_allocator_memspace
+                0x000000000000abe0                errno
+                0x000000000000ac00                pok_allocator_spaces
+                0x000000000000b0b0                __partition_end = .
 LOAD main.o
 LOAD activity.o
 LOAD /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a
 LOAD /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok//libpok.a
 OUTPUT(pr1.elf elf32-i386)
 
-.igot.plt       0x000000000000a6d0        0x0
- .igot.plt      0x000000000000a6d0        0x0 main.o
+.igot.plt       0x000000000000b0b0        0x0
+ .igot.plt      0x000000000000b0b0        0x0 main.o
 
-.got            0x000000000000a6d0        0x0
- .got           0x000000000000a6d0        0x0 main.o
+.debug_info     0x0000000000000000     0x4eb3
+ .debug_info    0x0000000000000000      0x4a7 main.o
+ .debug_info    0x00000000000004a7      0x55e activity.o
+ .debug_info    0x0000000000000a05      0x322 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .debug_info    0x0000000000000d27     0x2bad /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .debug_info    0x00000000000038d4     0x15df /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
-.got.plt        0x000000000000a6d0        0xc
- .got.plt       0x000000000000a6d0        0xc main.o
-                0x000000000000a6d0                _GLOBAL_OFFSET_TABLE_
+.debug_abbrev   0x0000000000000000     0x19f8
+ .debug_abbrev  0x0000000000000000       0xef main.o
+ .debug_abbrev  0x00000000000000ef       0xc9 activity.o
+ .debug_abbrev  0x00000000000001b8      0x10b /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .debug_abbrev  0x00000000000002c3      0xc4a /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .debug_abbrev  0x0000000000000f0d      0xaeb /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
-.debug_info     0x0000000000000000     0x4b3e
- .debug_info    0x0000000000000000      0x425 main.o
- .debug_info    0x0000000000000425      0x26b activity.o
- .debug_info    0x0000000000000690      0x322 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
- .debug_info    0x00000000000009b2     0x2bad /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .debug_info    0x000000000000355f     0x15df /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
-
-.debug_abbrev   0x0000000000000000     0x1a1b
- .debug_abbrev  0x0000000000000000      0x102 main.o
- .debug_abbrev  0x0000000000000102       0xd9 activity.o
- .debug_abbrev  0x00000000000001db      0x10b /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
- .debug_abbrev  0x00000000000002e6      0xc4a /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .debug_abbrev  0x0000000000000f30      0xaeb /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
-
-.debug_loc      0x0000000000000000     0x1272
- .debug_loc     0x0000000000000000       0x71 main.o
- .debug_loc     0x0000000000000071       0x49 activity.o
- .debug_loc     0x00000000000000ba      0x1dd /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .debug_loc     0x0000000000000297      0xfdb /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+.debug_loc      0x0000000000000000     0x135a
+ .debug_loc     0x0000000000000000       0x81 main.o
+ .debug_loc     0x0000000000000081      0x121 activity.o
+ .debug_loc     0x00000000000001a2      0x1dd /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .debug_loc     0x000000000000037f      0xfdb /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
 .debug_aranges  0x0000000000000000      0x490
  .debug_aranges
@@ -206,33 +190,32 @@ OUTPUT(pr1.elf elf32-i386)
  .debug_aranges
                 0x0000000000000278      0x218 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
-.debug_line     0x0000000000000000     0x1965
- .debug_line    0x0000000000000000      0x1b6 main.o
- .debug_line    0x00000000000001b6      0x1c3 activity.o
- .debug_line    0x0000000000000379       0xf4 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
- .debug_line    0x000000000000046d      0xb88 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .debug_line    0x0000000000000ff5      0x970 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+.debug_line     0x0000000000000000     0x1ab9
+ .debug_line    0x0000000000000000      0x1e2 main.o
+ .debug_line    0x00000000000001e2      0x2eb activity.o
+ .debug_line    0x00000000000004cd       0xf4 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .debug_line    0x00000000000005c1      0xb88 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .debug_line    0x0000000000001149      0x970 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
-.debug_str      0x0000000000000000     0x13e5
- .debug_str     0x0000000000000000      0x8cf main.o
-                                        0x913 (taille avant relaxe)
- .debug_str     0x00000000000008cf       0x51 activity.o
-                                        0x3f9 (taille avant relaxe)
- .debug_str     0x0000000000000920      0x101 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+.debug_str      0x0000000000000000     0x13d2
+ .debug_str     0x0000000000000000      0x8d5 main.o
+                                        0x919 (taille avant relaxe)
+ .debug_str     0x00000000000008d5       0xba activity.o
+                                        0x45f (taille avant relaxe)
+ .debug_str     0x000000000000098f       0x79 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
                                         0x8e3 (taille avant relaxe)
- .debug_str     0x0000000000000a21      0x6aa /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .debug_str     0x0000000000000a08      0x6b0 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
                                        0x7678 (taille avant relaxe)
- .debug_str     0x00000000000010cb      0x31a /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+ .debug_str     0x00000000000010b8      0x31a /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
                                        0x18cc (taille avant relaxe)
 
-.comment        0x0000000000000000       0x5e
- .comment       0x0000000000000000       0x29 main.o
-                                         0x2a (taille avant relaxe)
- .comment       0x0000000000000029       0x2a activity.o
- .comment       0x0000000000000029       0x35 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
-                                         0xd8 (taille avant relaxe)
- .comment       0x000000000000005e      0x798 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
- .comment       0x000000000000005e      0x396 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
+.comment        0x0000000000000000       0x35
+ .comment       0x0000000000000000       0x35 main.o
+                                         0x36 (taille avant relaxe)
+ .comment       0x0000000000000035       0x36 activity.o
+ .comment       0x0000000000000035       0xd8 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(arch.lo)
+ .comment       0x0000000000000035      0x798 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(core.lo)
+ .comment       0x0000000000000035      0x396 /home/imhassane/pok/examples/aircraft/pr1/../../..//libpok/libpok.a(libc.lo)
 
 .note.GNU-stack
                 0x0000000000000000        0x0

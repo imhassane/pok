@@ -39,11 +39,59 @@ int main ()
   ret = pok_thread_create(&tid , &tattr);
   printf("[P1] pok_thread_create (1) return=%d\n", ret);
 
-  tattr.priority = 42;
+  tattr.priority = 41;
   tattr.entry = th_az_filter;
 
   ret = pok_thread_create(&tid , &tattr);
   printf("[P1] pok_thread_create (2) return=%d\n", ret);
+
+  tattr.priority = 40;
+  tattr.entry = th_vz_filter;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (3) return=%d\n", ret);
+
+  tattr.priority = 45;
+  tattr.entry = th_q_filter;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (4) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_va_filter;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (5) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_altitude_hold;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (6) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_va_control;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (7) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_vz_control;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (8) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_elevator;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (9) return=%d\n", ret);
+
+  tattr.priority = 42;
+  tattr.entry = th_engine;
+
+  ret = pok_thread_create(&tid , &tattr);
+  printf("[P1] pok_thread_create (10) return=%d\n", ret);
 
   pok_partition_set_mode (POK_PARTITION_MODE_NORMAL);
   pok_thread_wait_infinite ();
