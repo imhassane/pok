@@ -6,6 +6,8 @@ export DEPLOYMENT_HEADER=$(shell pwd)/deployment.h
 include $(POK_PATH)/misc/mk/config.mk
 TARGET	=  pr1.elf
 OBJS		=	main.o activity.o
+LIBS = -lrtemsall -lc 
+LD_LIBS=-lm
 
 .PHONY: clean distclean install all
 

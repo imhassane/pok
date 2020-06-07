@@ -6,7 +6,7 @@ if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Debug")
 endif(NOT CMAKE_BUILD_TYPE)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -lm -Werror")
 
 # Find external libraries
 find_library(MATH_LIBRARY m)

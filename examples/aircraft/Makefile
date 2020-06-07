@@ -9,6 +9,7 @@ TARGET=$(shell pwd)/pok.elf
 ARCHIVE=$(shell pwd)/partitions.cpio
 PARTITIONS=pr1/pr1.elf pr2/pr2.elf
 KERNEL=kernel/kernel.lo
+LDFLAGS=-lm
 
 all: build-regular
 

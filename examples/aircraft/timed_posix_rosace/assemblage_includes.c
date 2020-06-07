@@ -1,5 +1,3 @@
-#include <math.h>
-
 #include "assemblage_includes.h"
 #ifdef USE_FLOAT
 #define MATH_COS cosf

@@ -39,19 +39,19 @@ int main ()
   ret = pok_thread_create(&tid , &tattr);
   printf("[P1] pok_thread_create (1) return=%d\n", ret);
 
-  tattr.priority = 41;
+  tattr.priority = 42;
   tattr.entry = th_az_filter;
 
   ret = pok_thread_create(&tid , &tattr);
   printf("[P1] pok_thread_create (2) return=%d\n", ret);
 
-  tattr.priority = 40;
+  tattr.priority = 42;
   tattr.entry = th_vz_filter;
 
   ret = pok_thread_create(&tid , &tattr);
   printf("[P1] pok_thread_create (3) return=%d\n", ret);
 
-  tattr.priority = 45;
+  tattr.priority = 42;
   tattr.entry = th_q_filter;
 
   ret = pok_thread_create(&tid , &tattr);

@@ -1,5 +1,8 @@
 #ifndef _assemblage_H
 #define _assemblage_H
+
+#include <math.h>
+
 #include "nonencoded_task_params.h"
 #include "multirate_precedence.h"
 #include "com_patterns.h"

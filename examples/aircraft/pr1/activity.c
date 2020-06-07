@@ -19,7 +19,11 @@
 #include <core/thread.h>
 #include <core/semaphore.h>
 #include <types.h>
-//#include "/timed_posix_rosace/assemblage.c"
+
+#include "../timed_posix_rosace/assemblage_includes.h"
+#include "../timed_posix_rosace/assemblage_includes.c"
+#include "../timed_posix_rosace/assemblage.h"
+#include "../timed_posix_rosace/assemblage.c"
 
 #define POK_THREAD_SLEEP 200000
 
@@ -34,7 +38,7 @@ void* th_h_filter()
    {
       printf ("P1T1: I am H_FILTER\n");
       ret = pok_sem_signal (sid);
-      printf ("P1T1: pok_sem_signal, ret=%d\n", ret);
+      h_filter_100446_fun(NULL);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -46,10 +50,8 @@ void* th_az_filter()
    {
       printf ("P1T2: I am AZ_FILTER\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T2: pok_sem_wait, ret=%d\n", ret);
-      
+      az_filter_100458_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -60,9 +62,8 @@ void* th_vz_filter() {
    {
       printf ("P1T3: I am VZ_FILTER\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T3: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T3: pok_sem_wait, ret=%d\n", ret);
+      Vz_filter_100452_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -73,9 +74,8 @@ void* th_q_filter() {
    {
       printf ("P1T4: I am q_FILTER\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T4: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T4: pok_sem_wait, ret=%d\n", ret);
+      q_filter_100455_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -86,9 +86,8 @@ void* th_va_filter() {
    {
       printf ("P1T5: I am VA_FILTER\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T5: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T5: pok_sem_wait, ret=%d\n", ret);
+      Va_filter_100449_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -99,9 +98,8 @@ void* th_altitude_hold() {
    {
       printf ("P1T6: I am ALTITUDE HOLD\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T6: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T6: pok_sem_wait, ret=%d\n", ret);
+      altitude_hold_50464_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -112,9 +110,8 @@ void* th_va_control() {
    {
       printf ("P1T7: I am VA CONTROL\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T7: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T7: pok_sem_wait, ret=%d\n", ret);
+      Va_control_50474_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -125,9 +122,8 @@ void* th_vz_control() {
    {
       printf ("P1T8: I am VZ CONTROL\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T8: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T8: pok_sem_wait, ret=%d\n", ret);
+      Vz_control_50483_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -138,9 +134,8 @@ void* th_elevator() {
    {
       printf ("P1T9: I am ELEVATOR\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T9: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T9: pok_sem_wait, ret=%d\n", ret);
+      elevator489_fun(NULL);
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
@@ -151,9 +146,10 @@ void* th_engine() {
    {
       printf ("P1T10: I am ENGINE\n");
       ret = pok_sem_wait (sid, 0);
-      printf ("P1T10: pok_sem_wait, ret=%d\n", ret);
-      ret = pok_sem_wait (sid, 0);
-      printf ("P1T10: pok_sem_wait, ret=%d\n", ret);
+
+      engine486_fun(NULL);
+
+      ret = pok_sem_signal (sid);
       pok_thread_sleep (POK_THREAD_SLEEP);
    }
 }
